@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import type { Card, Doc } from '../../types';
-import { generateCards, SAMPLE_TEXT } from '../../autogen';
-import { styleFromTheme } from '../../themes';
+import { SAMPLE_TEXT } from '../../autogen';
 import { Section } from '../ui';
 
 const ROLE_LABEL: Record<Card['role'], string> = { cover: '표지', body: '본문', ending: '엔딩' };
@@ -127,8 +126,4 @@ export function AutoPanel({
       </Section>
     </>
   );
-}
-
-export function makeCards(text: string, doc: Doc): Card[] {
-  return generateCards(text, styleFromTheme(doc.themeId));
 }

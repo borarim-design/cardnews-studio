@@ -107,7 +107,6 @@ function drawBlock(ctx: Ctx, block: TextBlock, accent: string, accentText: strin
   const font = cssFont(block.family, block.weight, block.size);
   const baselineOffset = block.size * 0.79;
   const padX = block.size * 0.14;
-  const padY = block.size * 0.1;
 
   for (const line of block.lines) {
     if (line.blank) continue;
@@ -153,7 +152,6 @@ function drawBlock(ctx: Ctx, block: TextBlock, accent: string, accentText: strin
       ctx.restore();
     }
   }
-  void padY;
 }
 
 function drawChip(ctx: Ctx, chip: Chip) {
