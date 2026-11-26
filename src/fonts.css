@@ -1,0 +1,126 @@
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('./assets/fonts/pretendard-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url('./assets/fonts/pretendard-700.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+  src: url('./assets/fonts/pretendard-800.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Gmarket Sans';
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url('./assets/fonts/gmarket-500.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Gmarket Sans';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url('./assets/fonts/gmarket-700.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Paperlogy';
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+  src: url('./assets/fonts/paperlogy-800.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Cafe24 Ssurround';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('./assets/fonts/cafe24surround-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Do Hyeon';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('./assets/fonts/dohyeon-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Galmuri11';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('./assets/fonts/galmuri11-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Nanum Myeongjo';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('./assets/fonts/nanummyeongjo-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Nanum Myeongjo';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url('./assets/fonts/nanummyeongjo-700.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Jua';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('./assets/fonts/jua-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Black Han Sans';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('./assets/fonts/blackhan-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Nanum Pen Script';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('./assets/fonts/nanumpen-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'MaruBuri';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('./assets/fonts/maruburi-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Gaegu';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('./assets/fonts/gaegu-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Gaegu';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url('./assets/fonts/gaegu-700.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Bagel Fat One';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('./assets/fonts/bagel-400.woff2') format('woff2');
+}

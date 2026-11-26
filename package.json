@@ -1,0 +1,27 @@
+{
+  "name": "cardnews-studio",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "카드뉴스 스튜디오 — 인스타 카드뉴스·캐러셀 제작 웹앱 (React + TypeScript + Vite, 정적 배포)",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "typecheck": "tsc -b --pretty false",
+    "preview": "vite preview",
+    "check:static": "node scripts/check-static.mjs",
+    "e2e": "node scripts/e2e.mjs"
+  },
+  "dependencies": {
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "typescript": "~5.9.3",
+    "vite": "^8.3.6"
+  }
+}
