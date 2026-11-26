@@ -45,6 +45,12 @@ npm run build      # dist/ 생성
 npm run preview    # 빌드 결과 미리보기 (http://localhost:4180)
 ```
 
+### file:// 로 열면 안 됩니다
+
+빌드 결과물은 ES 모듈이라 브라우저가 `file://` 에서 스크립트/폰트 로딩을 막습니다(CORS).
+`npm run preview` 나 GitHub Pages 처럼 **http(s) 로 서빙**해서 열어야 합니다.
+(E2E 에서도 로컬 HTTP 서버로 dist 를 서빙해 검증합니다.)
+
 ## 테스트
 
 ```bash
