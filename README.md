@@ -7,6 +7,24 @@ React + TypeScript + Vite 로 만들었고, 서버 없이 브라우저에서만 
 - 라이브: https://borarim-design.github.io/cardnews-studio/
 - 저장소: https://github.com/borarim-design/cardnews-studio
 
+## 🤖 AI 자동화 에이전트용 안내
+
+카드뉴스를 자동으로 기획·생성·렌더링하는 외부 AI 에이전트를 위해, 코드에서 추출한 **기계용 기술 명세**를 [`AGENTS.md`](AGENTS.md)에 두었습니다. 타입·상수·분할 규칙·렌더링 파이프라인·연동 방법이 전부 실제 코드 값과 함께 정리되어 있습니다.
+
+| 알아둘 것 | 요약 |
+| --- | --- |
+| 실행 형태 | 서버·API·인증 없는 정적 SPA. 상태는 브라우저 `localStorage['cardnews-studio:v1']` 의 `Doc` JSON 하나 |
+| 문서 스키마 | `Doc { themeId, ratio, cards[], watermark, pageNumber, showGuides, useBrackets }` / `Card { id, role, title, body, style }` / `CardStyle`(폰트·크기·색·배경·사진 등 전체 필드 필수) |
+| ID·프리셋 | 테마 6종(`taptap` `charcoal` `editorial` `retro` `wedding` `handwriting`) · 폰트 13종(패밀리명 기준, 웨이트 표 포함) · 비율 `4:5`=1080×1350, `1:1`=1080×1080, `9:16`=1080×1920 |
+| 텍스트 문법 | `[단어]` = 형광펜 강조(`useBrackets`), `\n` = 강제 줄바꿈, 빈 줄 = 여백(형광펜 안 칠해짐) |
+| 자동 분할 | `generateCards(text, style)` → 문단·불릿·문장 단위로 3~10장, 첫 장 표지 / 마지막 장 엔딩 |
+| 렌더링 | `layoutCard()` → `layoutFor()`/`prepareAssets()` → `drawLayout()` — 미리보기와 PNG 가 같은 함수·같은 1080 기준 좌표 |
+| 연동 경로 A | 헤드리스 브라우저(Playwright): `localStorage` 에 `Doc` 주입 → 새로고침 → `[data-testid="preview-canvas"]` 추출 또는 `[data-testid="export-zip"]` 다운로드 (코드 수정 불필요) |
+| 연동 경로 B | 모듈 재사용/JSON Import: `autogen.ts`·`layout.ts`·`render.ts` 재사용, URL query·JSON import 를 추가할 때 건드릴 파일(`doc.ts`, `App.tsx`) 명시 |
+| 검증 | `npm run typecheck` · `npm run build` · `npm run check:static`(빌드 후) · `npm run e2e` · `python3 scripts/verify-png.py` |
+
+> 에이전트에게 넘길 때는 `AGENTS.md` 하나만 주면 됩니다. 사람이 읽는 사용법은 아래에 이어집니다.
+
 ## 무엇이 되나
 
 | 기능 | 내용 |
