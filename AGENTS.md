@@ -143,7 +143,8 @@ interface CardStyle {
 
 ```ts
 interface PhotoAdjust {
-  src: string;    // data URL (builder: readImageFile → jpeg 0.9, max side 1600px) or any loadable URL
+  src: string;    // any loadable URL; the app's builder readImageFile() keeps the original file when it is
+                  // already ≤1600px and <900KB, otherwise re-encodes to ≤1600px JPEG q0.9 as a data URL
   scale: number;  // 100 = cover-fit; UI 100..320 (percent of cover size)
   offsetX: number;// -50..50 (% of canvas width, positive = right)
   offsetY: number;// -50..50 (% of canvas height, positive = down)
@@ -666,7 +667,7 @@ Deployment is a manual `dist/` + `.nojekyll` push to the `gh-pages` branch. **Do
 - **Blank lines are gaps, not highlightable lines.** For a “highlighted line break” effect, split the text into more cards instead.
 - **`showGuides` never reaches the canvas** — it is a DOM overlay (`safeGuide()` rectangles) only.
 - **`useBrackets: false` disables highlights globally** — set it per `Doc`, not per card.
-- **Photo data URLs inflate the JSON** (≤1600 px JPEG q0.9). `saveDoc` silently drops the write when `localStorage` is full; and a doc that big should be rendered immediately rather than round-tripped through storage.
+- **Photo data URLs inflate the JSON** (re-encoded to ≤1600 px JPEG q0.9 only when the source is larger than 1600 px or 900 KB; otherwise the original data URL is stored). `saveDoc` silently drops the write when `localStorage` is full; and a doc that big should be rendered immediately rather than round-tripped through storage.
 - **Card ids must be unique** — React keys and `currentId` selection rely on it. The app's id format is `c_` + 7 base36 chars.
 - **`naturalWidth`-based photo math** means a broken image src silently degrades to `#E7E7E7`.
 - **No i18n** — UI copy is Korean; the document itself is language-agnostic.
